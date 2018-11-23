@@ -1,0 +1,125 @@
+.myButton {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    color: white;
+    background-color: $color-background-red;
+    font-size: 2rem;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    opacity: 0.99;
+    transition: all 0.4s;
+    z-index: 1;
+
+    &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0%;
+        width: 25%;
+        height:  100%;
+        transform: translateY(100%);
+        background-color: $color-background-red-dark;
+        opacity: 0.5;
+        z-index: -1;
+        transition: all 0.4s;
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 0%;
+        width: 25%;
+        height:  100%;
+        transform: translateY(-100%);
+        background-color: $color-background-red-dark;
+        opacity: 0.5;
+        transition: all 0.4s;
+        z-index: -1;
+    }
+
+    &:hover:before {
+        transform: translateY(0%);
+    }
+
+    &:hover:after {
+        transform: translateY(0%);
+    }
+
+
+    &:hover .mySpan:before {
+        transform: translateY(0%);
+    }
+
+    &:hover .mySpan:after {
+        transform: translateY(0%);
+    }
+   
+    .mySpan {
+            z-index: 99999;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 25%;
+            width: 25%;
+            height: 100%;
+            transform: translateY(-100%);
+            background-color: $color-background-red-dark;
+            opacity: 0.5;
+            z-index: -1;
+            transition: all 0.4s;
+        }
+
+        &::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            right: 25%;
+            width: 25%;
+            height: 100%;
+            transform: translateY(100%);
+            background-color: $color-background-red-dark;
+             opacity: 0.5;
+             z-index: -1;
+            transition: all 0.4s;
+        }
+
+
+    }
+
+}
+
+.myButton__1{
+    width: 100px;
+    height: 40px;
+    margin-left: 50px;
+    background-color: $color-background-red;
+    color: white;
+    font-size: 2rem;
+    border: none;
+    outline: none;
+}
+
+.navigationArrow{
+    position: fixed;
+    bottom: -10%;
+    right: 2%;
+    font-size: 6rem;
+    color:red;
+    z-index: 9999;
+    transition: all 0.5s;
+}
+.showUp{
+    bottom: 5%;
+}
+.hideDown{
+    bottom: -10%;
+}
